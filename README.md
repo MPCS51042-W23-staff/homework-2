@@ -2,21 +2,33 @@
 
 The purpose of this homework is to practice functional programming.
 
-As a result the following restrictions apply for Problems 1-5:
+As a result, the following restrictions apply for Problems 1-5:
 
 - You may not use `while`, `len`, indexing such as `seq[n]` or `seq[n:m]`, or sequence methods like `list.append`, etc.
 - You may not use the `for` or `if` statement, aside from within comprehensions.
+- You may not use the ternary operator syntax i.e. `X if Y else Z` - as shorthand for an `if` statement. `if` conditionals within comprehensions or generator expressions are allowed.
+- You may not use any of the `builtin` functions `max(), min(), sum(), all(), any()`
 - No global variables.
 - You may write helper functions, but they too must obey these restrictions.
 - You may use `functools.reduce`, but no other functions that require an import.
     - https://docs.python.org/3/library/functools.html#functools.reduce
     - https://realpython.com/python-reduce-function/
-- Builtin functions like `map`, `filter` and `list` are allowed. `list(...)` can be useful to convert the result of a generator into a `list`.
-- You may use unpacking syntax like `a, b = (1, 2)`.
+Built-in functions like `map`, `filter` and `list` are allowed. `list(...)` can be useful to convert the result of a generator into a `list`.
+- You may use unpacking syntax like `a, b = (1, 2)`, as well as the splat/unpacking operator `*args`
+- You **are allowed** to use the following in your solutions:
+    - dictionaries, and the `d[key]` syntax
+    - `tuple()`
+    - `range()`
+    - `zip()`
+    - `bool()`
+    - Generator expressions
+    - `import operator`
+    - `functools.reduce`
+    - `functools.partial`
 
 If in doubt about a function or language feature, you should ask on `Ed Discussion` (If your question requires you to post code please be sure to post private messages.) and we will gladly clarify for everyone.
 
-Please take special care to follow these instructions, use of a disallowed function or construct will result in a significant loss of points for the problem.
+Please take special care to follow these instructions, the use of a disallowed function or construct will result in a significant loss of points for the problem.
 
 **You will also notice that each problem requires you to create a new file, in contrast to the function stubs we provided previously.  Be sure to document your functions!**
 
@@ -83,7 +95,7 @@ Implement a `count_all` function that takes in a list of lists and returns the t
 
 **Restriction**
 
-Remember, you may not use `len`, you may want to use `functools.reduce` to reimplement it.
+Remember, you may not use `len`, you may want to use `functools.reduce` to re-implement it.
 
 ### Problem 3
 
@@ -173,7 +185,7 @@ def grep(pattern, lines, ignore_case=False):
     pass
 ```
 
-`pattern` is a string that represents text we're searching for within each line.
+`pattern` is a string that represents the text we're searching for within each line.
 
 `lines` is an iterable of strings to search within.
 
